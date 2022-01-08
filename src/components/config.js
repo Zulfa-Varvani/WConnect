@@ -22,11 +22,13 @@ export function register(name, email, password){
     });
 }
 
-export function update(name, email, type){
+export function update(name, email, type, interest, help){
     return addDoc(collection(db, "users"), {
         name: name,
         email: email,
-        type: type
+        type: type,
+        interest: interest,
+        help: help
     })
 }
 

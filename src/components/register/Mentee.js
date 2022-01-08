@@ -29,12 +29,14 @@ const Mentee = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
+  const [interest, setInterest] = useState("");
+  const [help, setHelp] = useState("");
 
   async function handleRegister(e) {
     e.preventDefault();
     try {
         await register(name, email, password);
-        await update(name, email, "mentee");
+        await update(name, email, "mentee", interest, help);
         navigate("/dashboard-mentee");
         window.location.reload(false); //reloads page to show updated user name
     } catch(error) {
@@ -70,7 +72,9 @@ const Mentee = () => {
               minHeight={20}
               colorScheme="gray"
               backgroundColor="#F4EEF0"
-              color="#4B5563"
+              color="#120D31"
+              value={"Technology"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text color="#4B5563">Technology</Text>
           </Box>
@@ -85,6 +89,8 @@ const Mentee = () => {
               minHeight={20}
               backgroundColor="#F4EEF0"
               color="#120D31"
+              value={"Engineering"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text color="#4B5563">Engineering</Text>
           </Box>
@@ -98,7 +104,9 @@ const Mentee = () => {
               minWidth={20}
               minHeight={20}
               backgroundColor="#F4EEF0"
-              color="#4B5563"
+              color="#120D31"
+              value={"Science"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text>Science</Text>
           </Box>
@@ -112,7 +120,9 @@ const Mentee = () => {
               minWidth={20}
               minHeight={20}
               backgroundColor="#F4EEF0"
-              color="#4B5563"
+              color="#120D31"
+              value={"Mathematics"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text color="#4B5563">Mathematics</Text>
           </Box>
@@ -126,7 +136,9 @@ const Mentee = () => {
               minWidth={20}
               minHeight={20}
               backgroundColor="#F4EEF0"
-              color="#4B5563"
+              color="#120D31"
+              value={"Marketing"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text color="#4B5563">Marketing</Text>
           </Box>
@@ -140,7 +152,9 @@ const Mentee = () => {
               minWidth={20}
               minHeight={20}
               backgroundColor="#F4EEF0"
-              color="#4B5563"
+              color="#120D31"
+              value={"Finance"}
+              onClick={e=>setInterest(e.target.value)}
             />
             <Text>Finance</Text>
           </Box>
@@ -155,7 +169,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Mood Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Mood Disorders
         </Button>
@@ -164,7 +180,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Anxiety Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Anxiety Disorders
         </Button>
@@ -173,7 +191,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Personality Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Personality Disorders
         </Button>
@@ -182,7 +202,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Psychotic Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Psychotic Disorders
         </Button>
@@ -191,7 +213,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Eating Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Eating Disorders
         </Button>
@@ -200,7 +224,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Trauma-related Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Trauma-related Disorders
         </Button>
@@ -209,7 +235,9 @@ const Mentee = () => {
           size="lg"
           minWidth={350}
           backgroundColor="#F4EEF0"
-          color="#4B5563"
+          color="#120D31"
+          value={"Substance abuse Disorders"}
+          onClick={e=>setHelp(e.target.value)}
         >
           Substance abuse Disorders
         </Button>
