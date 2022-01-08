@@ -18,6 +18,7 @@ import {
 import { login } from "../config";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../Footer/Footer";
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -43,8 +44,9 @@ const Login = () => {
     }
 
     return (
+      <>
         <Container maxW="container.xl">
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={163}>
             <img src={require("./login.png")} alt="hands" height="581" width="581"/>
             <Stack
               flexDir="column"
@@ -52,8 +54,8 @@ const Login = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <Avatar bg="teal.500" />
-              <Heading color="teal.400">Welcome!</Heading>
+              <Avatar bg="#120D31" />
+              <Heading color="#120D31">Welcome!</Heading>
               <Box minW={{ base: "90%", md: "468px" }}>
                 <form onSubmit={e => e.preventDefault() && false}>
                   <Stack
@@ -103,7 +105,8 @@ const Login = () => {
                       borderRadius={0}
                       type="submit"
                       variant="solid"
-                      colorScheme="teal"
+                      backgroundColor="#120D31"
+                      color="white"
                       width="full"
                       onClick={handleLogin}
                     >
@@ -114,13 +117,17 @@ const Login = () => {
               </Box>
               <Box>
                 New to us?{" "}
-                <Link color="teal.500" href="/">
+                <Link color="#120D31" href="/">
                   Sign Up
                 </Link>
               </Box>
             </Stack>
           </SimpleGrid>
         </Container>
+        <Container  style={{ backgroundColor: '#120D31', maxWidth: '100%' }}>
+          <Footer/>
+        </Container>
+        </>
     );
 }
 

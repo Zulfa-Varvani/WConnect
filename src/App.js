@@ -9,12 +9,14 @@ import Login from './components/Login';
 import Mentee from "./components/Register/Mentee";
 import Mentor from "./components/Register/Mentor";
 import Mhs from "./components/Register/Mhs";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/contact-us" element={<Contact/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register-mentee" element={<Mentee/>}/>
         <Route path="/register-mentor" element={<Mentor/>}/>

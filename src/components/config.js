@@ -1,5 +1,6 @@
 import {initializeApp} from "firebase/app";
 import { useState, useEffect } from "react";
+import {getFirestore, collection, addDoc } from "firebase/firestore";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile} from "firebase/auth";
 
 const firebaseConfig = {
@@ -13,11 +14,20 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getFirestore();
 
 export function register(name, email, password){
     return createUserWithEmailAndPassword(auth, email, password).then((user) =>{
         updateProfile(user.user, {displayName: name});
     });
+}
+
+export function update(name, email, type){
+    return addDoc(collection(db, "users"), {
+        name: name,
+        email: email,
+        type: type
+    })
 }
 
 export function login(email, password){
