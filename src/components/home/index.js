@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.css"
 import {Heading, Stack, Container, Grid, GridItem, Flex, Image, Text, Button, HStack, Link} from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom";
 
@@ -8,15 +7,17 @@ const Home = () => {
 
     return (
       <div>
-        <img src={require("./WConnect.png")} alt="logo" height="184" width="190"/>
-        <HStack spacing="24px" className="login">
-        <Button backgroundColor="#120D31" color="white" height='48px' width='200px' onClick={() => {navigate("/register-mhs")}}>
-          Mental Health Specialist?
-        </Button>
-        <Button backgroundColor="#120D31" color="white" height='48px' width='200px' onClick={() => {navigate("/register-mentor")}}>
-          Industry Mentor?
-        </Button>
-        </HStack>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <img src={require("./WConnect.png")} alt="logo" height="184" width="190"/>
+          <div style={{ display: 'flex', gap: 40, justifyContent: 'flex-end' }}>
+            <Button backgroundColor="#120D31" color="white" height='48px' width='200px' onClick={() => {navigate("/register-mhs")}}>
+              Mental Health Specialist?
+            </Button>
+            <Button backgroundColor="#120D31" color="white" height='48px' width='200px' onClick={() => {navigate("/register-mentor")}}>
+              Industry Mentor?
+            </Button>
+          </div>
+        </div>
         <Container>
           <Grid templateColumns='repeat(2, 1fr)' gap={10}>
             <GridItem>
