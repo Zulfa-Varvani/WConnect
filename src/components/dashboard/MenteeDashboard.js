@@ -3,7 +3,7 @@ import React from "react";
 const MenteeDash = () => {
     return (
       <div>
-        mentor Dashboard
+        Mentee Dashboard
       </div>
     );
 }

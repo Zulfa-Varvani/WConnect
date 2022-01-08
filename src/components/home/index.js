@@ -1,5 +1,5 @@
 import React from "react";
-import {Heading, Stack, Container, Grid, GridItem, Flex, Image, Text, Button, HStack, Link} from "@chakra-ui/react"
+import {Heading, Stack, Container, Grid, GridItem, Flex, Image, Text, Button,  Link} from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
