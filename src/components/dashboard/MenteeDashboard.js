@@ -9,3 +9,10 @@ const MenteeDash = () => {
 }
 
 export default MenteeDash;
+
+
+//need logout button
+//show profiles of two people
+//buttons on profiles
+//make resources pages
+//contact form
