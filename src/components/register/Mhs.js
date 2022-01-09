@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import {
   Container,
   Text,
@@ -11,7 +11,7 @@ import {
   SimpleGrid,
   Box,
   Heading
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import {
   CopyIcon,
   SmallCloseIcon,
@@ -19,10 +19,11 @@ import {
   ArrowLeftIcon,
   CalendarIcon,
   CheckCircleIcon
-} from '@chakra-ui/icons'
-import { Footer } from '../Footer/Footer'
-import { useNavigate } from 'react-router-dom'
-import {register, update} from "../config"
+} from '@chakra-ui/icons';
+import { Footer } from '../Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import {register, update} from "../config";
+import {Header} from "../Header/Header";
 
 const Mhs = () => {
   const [name, setName] = useState("");
@@ -36,18 +37,24 @@ const Mhs = () => {
     e.preventDefault();
     try {
         await register(name, email, password);
-        await update(name, email, "mentee", interest, help);
-        navigate("/dashboard-mentee");
+        await update(name, email, "mhs", interest, help);
+        navigate("/dashboard-mhs");
         window.location.reload(false); //reloads page to show updated user name
     } catch(error) {
         console.error(error);
         alert("error!");
     }
+    setName("");
+    setEmail("");
+    setPassword("");
+    setHelp("");
+    setInterest("");
   }
 
   return (
     <>
     <Container maxW="container.xl" marginBottom={24}>
+      <Header/>
       <VStack mt={20} spacing={5} align="center">
         <Heading maxHeight={20} overflow="visible">
           Create Account
@@ -257,7 +264,7 @@ const Mhs = () => {
         </Button>
         <Text>
           Already have an account?
-          <Link pl={1} color="messenger.500" href="/login">
+          <Link pl={1} color="#B98EA7" href="/login">
             Click here
           </Link>
         </Text>

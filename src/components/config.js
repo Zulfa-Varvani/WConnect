@@ -14,13 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const db = getFirestore();
-
-export function register(name, email, password){
-    return createUserWithEmailAndPassword(auth, email, password).then((user) =>{
-        updateProfile(user.user, {displayName: name});
-    });
-}
+export const db = getFirestore();
 
 export function update(name, email, type, interest, help){
     return addDoc(collection(db, "users"), {
@@ -30,6 +24,12 @@ export function update(name, email, type, interest, help){
         interest: interest,
         help: help
     })
+}
+
+export function register(name, email, password){
+    return createUserWithEmailAndPassword(auth, email, password).then((user) =>{
+        updateProfile(user.user, {displayName: name});
+    });
 }
 
 export function login(email, password){

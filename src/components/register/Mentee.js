@@ -23,6 +23,7 @@ import {
 import { Footer } from '../Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import {register, update} from "../config"
+import {Header} from "../Header/Header"
 
 const Mentee = () => {
   const [name, setName] = useState("");
@@ -43,11 +44,17 @@ const Mentee = () => {
         console.error(error);
         alert("error!");
     }
+    setName("");
+    setEmail("");
+    setPassword("");
+    setHelp("");
+    setInterest("");
   }
 
   return (
     <>
     <Container maxW="container.xl" marginBottom={24}>
+      <Header/>
       <VStack mt={20} spacing={5} align="center">
         <Heading maxHeight={20} overflow="visible">
           Create Account
@@ -257,7 +264,7 @@ const Mentee = () => {
         </Button>
         <Text>
           Already have an account?
-          <Link pl={1} color="messenger.500" href="/login">
+          <Link pl={1} color="#B98EA7" href="/login">
             Click here
           </Link>
         </Text>

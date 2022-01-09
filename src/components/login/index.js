@@ -19,6 +19,7 @@ import { login } from "../config";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
+import {Header} from "../Header/Header";
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -46,7 +47,8 @@ const Login = () => {
     return (
       <>
         <Container maxW="container.xl">
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={163}>
+          <Header/>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
             <img src={require("./login.png")} alt="hands" height="581" width="581"/>
             <Stack
               flexDir="column"
@@ -61,14 +63,14 @@ const Login = () => {
                   <Stack
                     spacing={4}
                     p="1rem"
-                    backgroundColor="whiteAlpha.900"
+                    backgroundColor="#B98EA7"
                     boxShadow="md"
                   >
                       <FormControl>
                         <InputGroup>
                           <InputLeftElement
                             pointerEvents="none"
-                            children={<CFaUserAlt color="gray.300" />}
+                            children={<CFaUserAlt color="gray.100" />}
                           />
                           <Input placeholder="Type (mentor, mentee, mhs)" value={type} onChange={e => setType(e.target.value)}/>
                         </InputGroup>
@@ -77,7 +79,7 @@ const Login = () => {
                       <InputGroup>
                         <InputLeftElement
                           pointerEvents="none"
-                          children={<CFaUserAlt color="gray.300" />}
+                          children={<CFaUserAlt color="gray.100" />}
                         />
                         <Input type="email" placeholder="email address" value={email} onChange={e => setEmail(e.target.value)}/>
                       </InputGroup>
@@ -86,8 +88,8 @@ const Login = () => {
                       <InputGroup>
                         <InputLeftElement
                           pointerEvents="none"
-                          color="gray.300"
-                          children={<CFaLock color="gray.300" />}
+                          color="gray.100"
+                          children={<CFaLock color="gray.100" />}
                         />
                         <Input
                           type={showPassword ? "text" : "password"}
@@ -117,7 +119,7 @@ const Login = () => {
               </Box>
               <Box>
                 New to us?{" "}
-                <Link color="#120D31" href="/">
+                <Link color="#B98EA7" href="/">
                   Sign Up
                 </Link>
               </Box>
